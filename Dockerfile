@@ -8,6 +8,6 @@ COPY BinarySearch.cpp .
 # Compile the program
 RUN g++ BinarySearch.cpp -o BinarySearch
 
-# keep container alive
-CMD ["tail", "-f", "/dev/null"]
+# Run program & keep container alive
+CMD ["sh", "-c", "./BinarySearch || true; tail -f /dev/null"]
 
